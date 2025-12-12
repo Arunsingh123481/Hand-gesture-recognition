@@ -1,18 +1,5 @@
 🎯 Hand Gesture Recognition System
-<div align="center">
-https://img.shields.io/badge/Python-3.8%252B-blue
-https://img.shields.io/badge/OpenCV-4.8-orange
-https://img.shields.io/badge/MediaPipe-0.10-green
-https://img.shields.io/badge/Scikit--learn-1.3-red
-https://img.shields.io/badge/License-MIT-yellow
 
-Real-time hand gesture recognition using computer vision and machine learning
-
-https://img.shields.io/badge/%F0%9F%93%B1-Live_Demo-red
-https://img.shields.io/github/issues/Arunsingh123481/Hand-gesture-recognition
-https://img.shields.io/github/stars/Arunsingh123481/Hand-gesture-recognition
-
-</div>
 📌 Overview
 A real-time hand gesture recognition system that uses MediaPipe for hand landmark detection and K-Nearest Neighbors (KNN) for gesture classification. This system can recognize multiple hand gestures in real-time using just a webcam!
 
@@ -203,24 +190,26 @@ Change Model Parameters
 Edit train_gesture_model.py:
 
 python
-# Try different configurations
+'''# Try different configurations
 model = KNeighborsClassifier(
     n_neighbors=7,           # More neighbors for complex gestures
     weights='distance',      # Weight by distance
     metric='manhattan'       # Different distance metric
 )
 Add Confidence Threshold
-Modify gesture_recognition.py:
+Modify gesture_recognition.py:'''
 
 python
-# Add confidence check
+'''# Add confidence check
 probabilities = model.predict_proba([landmarks])
 confidence = max(probabilities[0])
 
 if confidence > 0.7:  # 70% confidence threshold
     prediction = model.predict([landmarks])[0]
 else:
-    prediction = "Uncertain"
+    prediction = "Uncertain" '''
+
+    
 🐛 Troubleshooting
 Problem	Solution
 "No module named 'mediapipe'"	pip install mediapipe
@@ -232,32 +221,11 @@ Common Issues & Fixes
 Windows DLL Error:
 
 bash
+'''
 # Reinstall OpenCV
 pip uninstall opencv-python
 pip install opencv-python-headless
-Mac Camera Permissions:
 
-System Preferences → Security & Privacy → Camera
-
-Allow terminal/VSCode to access camera
-
-Linux Webcam Access:
-
-bash
-sudo apt-get install v4l-utils
-sudo usermod -a -G video $USER
-📚 API Reference
-Main Functions
-python
-# In gesture_recognition.py
-def extract_landmarks(hand_landmarks):
-    """Extract 21 hand landmarks as feature vector"""
-    # Returns: [x1, y1, z1, x2, y2, z2, ...]
-
-# In train_gesture_model.py  
-def train_model(X, y):
-    """Train KNN classifier on gesture data"""
-    # Returns: Trained model with accuracy score
 🚀 Advanced Features
 Extend the Project
 Gesture-controlled Applications:
