@@ -1,4 +1,4 @@
-🎯 Hand Gesture Recognition System
+## 🎯 Hand Gesture Recognition System
 
 ## Overview
 
@@ -320,5 +320,3 @@ We welcome contributions! Here's how:
 * Test your changes thoroughly
 
 ---
-
-*Happy hacking!* 👋
